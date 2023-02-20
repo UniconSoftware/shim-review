@@ -50,7 +50,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 - Name: Jan Bungeroth
 - Position: CTO
 - Email address: jan.bungeroth@unicon.com
-- PGP key fingerprint: 8A07 EECD A684 DCBC B41F  EDE5 686E 1189 8ACB 8132
+- PGP key fingerprint: 8A07 EECD A684 DCBC B41F  EDE5 686E 1189 8ACB 8132
 
 The key is signed by two Debian Developers. Their keys can, naturally, be found in the Debian keyring.
 
@@ -77,7 +77,7 @@ Yes. the git repository was based on shim-15.7.tar.bz2
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to get this binary:
 *******************************************************************************
-https://github.com/UniconSoftware/shim 
+https://github.com/UniconSoftware/shim
 
 *******************************************************************************
 ### What patches are being applied and why:
