@@ -224,7 +224,7 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 *******************************************************************************
-We do not use this feature.
+As stated, we just use the grub package as provided by Debian with adding a few more modules as the only deviation. Therefore we include Debian's SBAT file.
 
 *******************************************************************************
 ### Which modules are built into your signed grub image?
