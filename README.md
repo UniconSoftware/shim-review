@@ -82,11 +82,17 @@ https://github.com/UniconSoftware/shim
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-"Enable the NX compatibility flag by default", taken from
-https://github.com/rhboot/shim/pull/530/commits/a53b9f7ceec1dfa1487f4d675573449c5b2a16fb
-
-"Make sbat_var.S parse right with buggy gcc/binutils", taken from
+"Make sbat_var.S parse right with buggy gcc/binutils"
 https://github.com/rhboot/shim/commit/657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa
+Justification: Our old toolchain requires that fix.
+
+"Enable the NX compatibility flag by default"
+https://github.com/rhboot/shim/commit/7c7642530fab73facaf3eac233cfbce29e10b0ef
+Justification: From other reviews it seemed this is mandatory now.
+
+"CryptoPkg/BaseCryptLib: Fix buffer overflow issue in realloc wrapper"
+https://github.com/rhboot/shim/commit/89972ae25c133df31290f394413c19ea903219ad
+Justification: This looks like an important bugfix.
 
 They are included in the repo mentioned in the previous question.
 
