@@ -209,7 +209,7 @@ Not applicable as this is the first shim to be signed.
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-f2bff77429e2e2f0702c476c6f2ea2cc8ea371178a1f2a8cc78f1c621cd507ec  shimx64.efi
+7a94892e4bebfcf1ea270f4f2c1b1f864139df15fe0774f795d31e630e4cfc80  shimx64.efi
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
