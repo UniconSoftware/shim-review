@@ -209,7 +209,7 @@ Not applicable as this is the first shim to be signed.
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-7a94892e4bebfcf1ea270f4f2c1b1f864139df15fe0774f795d31e630e4cfc80  shimx64.efi
+4ef1179453b093781de767ea5821da8b1abd58eaf00ef56c0c85e1852b93477d  shimx64.efi
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -230,7 +230,23 @@ No
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 *******************************************************************************
-As stated, we just use the grub package as provided by Debian with adding a few more modules as the only deviation. Therefore we include Debian's SBAT file.
+
+shim:
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.elux,1,Unicon,grub2,15.7,mail:product-security@unicon.com
+
+grub2:
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.debian,4,Debian,grub2,2.06-3~deb11u5,https://tracker.debian.org/pkg/grub2
+grub.elux,1,Unicon,grub2,grub2,2.06-3~deb11u5unicon1,mail:product-security@unicon.com
+
+fwupd:
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd-efi,1,Firmware update daemon,fwupd-efi,1.2,https://github.com/fwupd/fwupd-efi
+fwupd-efi.ubuntu,1,Ubuntu,fwupd,1.2-2~20.04.1,https://launchpad.net/ubuntu/+source/fwupd
+fwupd-efi.elux,1,Unicon,fwupd,1.2-2~20.04.1unicon1,mail:product-security@unicon.com
 
 *******************************************************************************
 ### Which modules are built into your signed grub image?
@@ -253,7 +269,7 @@ The used bootloader is grub2, sources are as provided by Debian 11 ("bullseye"),
 *******************************************************************************
 ### If your SHIM launches any other components, please provide further details on what is launched.
 *******************************************************************************
-No other components are to be launched.
+We might launch fwupd ("Firmware update daemon"), using the version from Ubuntu focal. Only change is adding our SBAT entry.
 
 *******************************************************************************
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.

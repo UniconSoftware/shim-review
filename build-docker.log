@@ -1,53 +1,53 @@
-Fri Feb 24 16:54:54 CET 2023: Begin work
+Mon Mar  6 09:19:22 CET 2023: Begin work
 Sending build context to Docker daemon  954.4kB
 Step 1/11 : FROM ubuntu:focal
  ---> 20fffa419e3a
 Step 2/11 : COPY . /shim-review
- ---> 9f1dabd5aa1a
+ ---> ab3acf876d0a
 Step 3/11 : RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list &&     apt update -y &&     DEBIAN_FRONTEND=noninteractive apt install -y devscripts &&     apt build-dep -y shim &&     cat /etc/apt/sources.list &&     dpkg -l
- ---> Running in 372bcd0c4227
+ ---> Running in f829ac92ceeb
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-[0mGet:1 http://archive.canonical.com/ubuntu focal InRelease [12.1 kB]
-Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
-Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
-Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
-Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+[0mGet:1 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:2 http://archive.canonical.com/ubuntu focal InRelease [12.1 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
 Get:6 http://archive.canonical.com/ubuntu focal/partner Sources [649 B]
-Get:7 http://security.ubuntu.com/ubuntu focal-security/restricted Sources [57.9 kB]
-Get:8 http://security.ubuntu.com/ubuntu focal-security/multiverse Sources [13.9 kB]
-Get:9 http://security.ubuntu.com/ubuntu focal-security/universe Sources [188 kB]
-Get:10 http://security.ubuntu.com/ubuntu focal-security/main Sources [338 kB]
-Get:11 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [28.5 kB]
-Get:12 http://archive.ubuntu.com/ubuntu focal/restricted Sources [7198 B]
-Get:13 http://archive.ubuntu.com/ubuntu focal/multiverse Sources [208 kB]
-Get:14 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2496 kB]
-Get:15 http://archive.ubuntu.com/ubuntu focal/universe Sources [12.3 MB]
-Get:16 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1937 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal/universe Sources [12.3 MB]
+Get:8 http://security.ubuntu.com/ubuntu focal-security/restricted Sources [58.5 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/main Sources [339 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/universe Sources [195 kB]
+Get:11 http://security.ubuntu.com/ubuntu focal-security/multiverse Sources [13.9 kB]
+Get:12 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [2535 kB]
+Get:13 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [28.5 kB]
+Get:14 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [1998 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1013 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal/multiverse Sources [208 kB]
 Get:17 http://archive.ubuntu.com/ubuntu focal/main Sources [1079 kB]
-Get:18 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1000 kB]
-Get:19 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
-Get:20 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
-Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
-Get:22 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
-Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main Sources [680 kB]
-Get:24 http://archive.ubuntu.com/ubuntu focal-updates/universe Sources [379 kB]
-Get:25 http://archive.ubuntu.com/ubuntu focal-updates/restricted Sources [58.0 kB]
-Get:26 http://archive.ubuntu.com/ubuntu focal-updates/multiverse Sources [25.3 kB]
-Get:27 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2069 kB]
-Get:28 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [31.2 kB]
-Get:29 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1299 kB]
-Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [2972 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal/restricted Sources [7198 B]
+Get:19 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:21 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/multiverse Sources [25.3 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/universe Sources [386 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/restricted Sources [58.6 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/main Sources [680 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [31.2 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2134 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1308 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3012 kB]
 Get:31 http://archive.ubuntu.com/ubuntu focal-backports/main Sources [10.9 kB]
 Get:32 http://archive.ubuntu.com/ubuntu focal-backports/universe Sources [11.6 kB]
 Get:33 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.6 kB]
 Get:34 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
-Fetched 40.7 MB in 3s (11.6 MB/s)
+Fetched 41.0 MB in 9s (4475 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-22 packages can be upgraded. Run 'apt list --upgradable' to see them.
+23 packages can be upgraded. Run 'apt list --upgradable' to see them.
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -242,7 +242,7 @@ The following NEW packages will be installed:
   xz-utils
 The following packages will be upgraded:
   gpgv perl-base
-2 upgraded, 332 newly installed, 0 to remove and 20 not upgraded.
+2 upgraded, 332 newly installed, 0 to remove and 21 not upgraded.
 Need to get 105 MB of archives.
 After this operation, 470 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 perl-base amd64 5.30.0-9ubuntu0.3 [1514 kB]
@@ -330,7 +330,7 @@ Get:82 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf0 amd64 2
 Get:83 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.34-6ubuntu1.4 [1613 kB]
 Get:84 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils amd64 2.34-6ubuntu1.4 [3380 B]
 Get:85 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc-dev-bin amd64 2.31-0ubuntu9.9 [71.8 kB]
-Get:86 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-139.156 [1129 kB]
+Get:86 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-144.161 [1127 kB]
 Get:87 http://archive.ubuntu.com/ubuntu focal/main amd64 libcrypt-dev amd64 1:4.4.10-10ubuntu4 [104 kB]
 Get:88 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6-dev amd64 2.31-0ubuntu9.9 [2519 kB]
 Get:89 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9-base amd64 9.4.0-1ubuntu1~20.04.1 [19.4 kB]
@@ -376,8 +376,8 @@ Get:128 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libldap-2.4-2 
 Get:129 http://archive.ubuntu.com/ubuntu focal/main amd64 libnghttp2-14 amd64 1.40.0-1build1 [78.7 kB]
 Get:130 http://archive.ubuntu.com/ubuntu focal/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build1 [54.9 kB]
 Get:131 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libssh-4 amd64 0.9.3-2ubuntu2.2 [170 kB]
-Get:132 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.15 [235 kB]
-Get:133 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.15 [161 kB]
+Get:132 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl4 amd64 7.68.0-1ubuntu2.16 [235 kB]
+Get:133 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 curl amd64 7.68.0-1ubuntu2.16 [161 kB]
 Get:134 http://archive.ubuntu.com/ubuntu focal/main amd64 dctrl-tools amd64 2.24-3 [61.5 kB]
 Get:135 http://archive.ubuntu.com/ubuntu focal/main amd64 libfakeroot amd64 1.24-1 [25.7 kB]
 Get:136 http://archive.ubuntu.com/ubuntu focal/main amd64 fakeroot amd64 1.24-1 [62.6 kB]
@@ -442,7 +442,7 @@ Get:194 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-gpg amd64 1.13
 Get:195 http://archive.ubuntu.com/ubuntu focal/main amd64 dput all 1.0.3ubuntu1 [42.3 kB]
 Get:196 http://archive.ubuntu.com/ubuntu focal/main amd64 libcroco3 amd64 0.6.13-1 [82.5 kB]
 Get:197 http://archive.ubuntu.com/ubuntu focal/main amd64 gettext amd64 0.19.8.1-10build1 [895 kB]
-Get:198 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl3-gnutls amd64 7.68.0-1ubuntu2.15 [232 kB]
+Get:198 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libcurl3-gnutls amd64 7.68.0-1ubuntu2.16 [232 kB]
 Get:199 http://archive.ubuntu.com/ubuntu focal/main amd64 liberror-perl all 0.17029-1 [26.5 kB]
 Get:200 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 git-man all 1:2.25.1-1ubuntu3.10 [887 kB]
 Get:201 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 git amd64 1:2.25.1-1ubuntu3.10 [4534 kB]
@@ -580,7 +580,7 @@ Get:332 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 unzip amd64 6.
 Get:333 http://archive.ubuntu.com/ubuntu focal/main amd64 libauthen-sasl-perl all 2.1600-1 [48.7 kB]
 Get:334 http://archive.ubuntu.com/ubuntu focal/main amd64 python3-magic all 2:0.4.15-3 [9376 B]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 105 MB in 9s (11.2 MB/s)
+[0mFetched 105 MB in 11s (9619 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4126 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.30.0-9ubuntu0.3_amd64.deb ...
 Unpacking perl-base (5.30.0-9ubuntu0.3) over (5.30.0-9ubuntu0.2) ...
@@ -848,8 +848,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../056-libc-dev-bin_2.31-0ubuntu9.9_amd64.deb ...
 Unpacking libc-dev-bin (2.31-0ubuntu9.9) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../057-linux-libc-dev_5.4.0-139.156_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (5.4.0-139.156) ...
+Preparing to unpack .../057-linux-libc-dev_5.4.0-144.161_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.4.0-144.161) ...
 Selecting previously unselected package libcrypt-dev:amd64.
 Preparing to unpack .../058-libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb ...
 Unpacking libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
@@ -986,11 +986,11 @@ Selecting previously unselected package libssh-4:amd64.
 Preparing to unpack .../102-libssh-4_0.9.3-2ubuntu2.2_amd64.deb ...
 Unpacking libssh-4:amd64 (0.9.3-2ubuntu2.2) ...
 Selecting previously unselected package libcurl4:amd64.
-Preparing to unpack .../103-libcurl4_7.68.0-1ubuntu2.15_amd64.deb ...
-Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../103-libcurl4_7.68.0-1ubuntu2.16_amd64.deb ...
+Unpacking libcurl4:amd64 (7.68.0-1ubuntu2.16) ...
 Selecting previously unselected package curl.
-Preparing to unpack .../104-curl_7.68.0-1ubuntu2.15_amd64.deb ...
-Unpacking curl (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../104-curl_7.68.0-1ubuntu2.16_amd64.deb ...
+Unpacking curl (7.68.0-1ubuntu2.16) ...
 Selecting previously unselected package dctrl-tools.
 Preparing to unpack .../105-dctrl-tools_2.24-3_amd64.deb ...
 Unpacking dctrl-tools (2.24-3) ...
@@ -1184,8 +1184,8 @@ Selecting previously unselected package gettext.
 Preparing to unpack .../168-gettext_0.19.8.1-10build1_amd64.deb ...
 Unpacking gettext (0.19.8.1-10build1) ...
 Selecting previously unselected package libcurl3-gnutls:amd64.
-Preparing to unpack .../169-libcurl3-gnutls_7.68.0-1ubuntu2.15_amd64.deb ...
-Unpacking libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.15) ...
+Preparing to unpack .../169-libcurl3-gnutls_7.68.0-1ubuntu2.16_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.16) ...
 Selecting previously unselected package liberror-perl.
 Preparing to unpack .../170-liberror-perl_0.17029-1_all.deb ...
 Unpacking liberror-perl (0.17029-1) ...
@@ -1619,7 +1619,7 @@ Setting up libnghttp2-14:amd64 (1.40.0-1build1) ...
 Setting up libmagic1:amd64 (1:5.38-4) ...
 Setting up less (551-1ubuntu0.1) ...
 Setting up perl-openssl-defaults:amd64 (4) ...
-Setting up linux-libc-dev:amd64 (5.4.0-139.156) ...
+Setting up linux-libc-dev:amd64 (5.4.0-144.161) ...
 Setting up libctf-nobfd0:amd64 (2.34-6ubuntu1.4) ...
 Setting up gettext-base (0.19.8.1-10build1) ...
 Setting up libnpth0:amd64 (1.6-1) ...
@@ -1636,8 +1636,8 @@ Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2ubuntu0.1) ...
 Setting up tzdata (2022g-0ubuntu0.20.04.1) ...
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Fri Feb 24 15:56:13 UTC 2023.
-Universal Time is now:  Fri Feb 24 15:56:13 UTC 2023.
+Local time is now:      Mon Mar  6 08:21:09 UTC 2023.
+Universal Time is now:  Mon Mar  6 08:21:09 UTC 2023.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Setting up fakeroot (1.24-1) ...
@@ -1919,7 +1919,7 @@ Setting up libparams-classify-perl (0.015-1build2) ...
 Setting up libldap-2.4-2:amd64 (2.4.49+dfsg-2ubuntu1.9) ...
 Setting up libpath-iterator-rule-perl (1.014-1) ...
 Setting up libnet-dns-sec-perl (1.15-1) ...
-Setting up libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.15) ...
+Setting up libcurl3-gnutls:amd64 (7.68.0-1ubuntu2.16) ...
 Setting up libsereal-perl (4.011-1) ...
 Setting up libhtml-format-perl (2.12-1) ...
 Setting up libxml-sax-perl (1.02+dfsg-1) ...
@@ -1942,8 +1942,8 @@ Replacing config file /etc/perl/XML/SAX/ParserDetails.ini with new version
 Setting up libconst-fast-perl (0.014-1) ...
 Setting up libhttp-daemon-perl (6.06-1ubuntu0.1) ...
 Setting up libgit-wrapper-perl (0.048-1) ...
-Setting up libcurl4:amd64 (7.68.0-1ubuntu2.15) ...
-Setting up curl (7.68.0-1ubuntu2.15) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.16) ...
+Setting up curl (7.68.0-1ubuntu2.16) ...
 Setting up gpg-wks-client (2.2.19-3ubuntu2.2) ...
 Setting up libmodule-implementation-perl (0.09-1) ...
 Setting up libemail-valid-perl (1.202-1) ...
@@ -1977,7 +1977,7 @@ Updating certificates in /etc/ssl/certs...
 Running hooks in /etc/ca-certificates/update.d...
 done.
 [91m
-WARNING: [0m[91mapt[0m[91m [0m[91mdoes not have a stable CLI interface. [0m[91mUse with caution in scripts.[0m[91m
+WARNING: [0m[91mapt[0m[91m does not have a stable CLI interface. [0m[91mUse with caution in scripts.[0m[91m
 [0m[91m
 [0mReading package lists...
 Building dependency tree...
@@ -1989,7 +1989,7 @@ The following NEW packages will be installed:
   libsub-override-perl libtool m4 po-debconf xxd zlib1g-dev
 The following packages will be upgraded:
   zlib1g
-1 upgraded, 21 newly installed, 0 to remove and 19 not upgraded.
+1 upgraded, 21 newly installed, 0 to remove and 20 not upgraded.
 Need to get 3789 kB of archives.
 After this operation, 11.5 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g amd64 1:1.2.11.dfsg-2ubuntu1.5 [54.2 kB]
@@ -2015,7 +2015,7 @@ Get:20 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g-dev amd6
 Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 libelf-dev amd64 0.176-1.1build1 [57.0 kB]
 Get:22 http://archive.ubuntu.com/ubuntu focal/universe amd64 dos2unix amd64 7.4.0-2 [374 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 3789 kB in 1s (5719 kB/s)
+[0mFetched 3789 kB in 4s (1077 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 25287 files and directories currently installed.)
 Preparing to unpack .../zlib1g_1%3a1.2.11.dfsg-2ubuntu1.5_amd64.deb ...
 Unpacking zlib1g:amd64 (1:1.2.11.dfsg-2ubuntu1.5) over (1:1.2.11.dfsg-2ubuntu1.3) ...
@@ -2185,7 +2185,7 @@ ii  ca-certificates                  20211016ubuntu0.20.04.1           all      
 ii  coreutils                        8.30-3ubuntu2                     amd64        GNU core utilities
 ii  cpp                              4:9.3.0-1ubuntu2                  amd64        GNU C preprocessor (cpp)
 ii  cpp-9                            9.4.0-1ubuntu1~20.04.1            amd64        GNU C preprocessor
-ii  curl                             7.68.0-1ubuntu2.15                amd64        command line tool for transferring data with URL syntax
+ii  curl                             7.68.0-1ubuntu2.16                amd64        command line tool for transferring data with URL syntax
 ii  dash                             0.5.10.2-6                        amd64        POSIX-compliant shell
 ii  dctrl-tools                      2.24-3                            amd64        Command-line tools to process Debian package information
 ii  debconf                          1.5.73                            all          Debian configuration management system
@@ -2283,8 +2283,8 @@ ii  libcrypt-dev:amd64               1:4.4.10-10ubuntu4                amd64    
 ii  libcrypt1:amd64                  1:4.4.10-10ubuntu4                amd64        libcrypt shared library
 ii  libctf-nobfd0:amd64              2.34-6ubuntu1.4                   amd64        Compact C Type Format library (runtime, no BFD dependency)
 ii  libctf0:amd64                    2.34-6ubuntu1.4                   amd64        Compact C Type Format library (runtime, BFD dependency)
-ii  libcurl3-gnutls:amd64            7.68.0-1ubuntu2.15                amd64        easy-to-use client-side URL transfer library (GnuTLS flavour)
-ii  libcurl4:amd64                   7.68.0-1ubuntu2.15                amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
+ii  libcurl3-gnutls:amd64            7.68.0-1ubuntu2.16                amd64        easy-to-use client-side URL transfer library (GnuTLS flavour)
+ii  libcurl4:amd64                   7.68.0-1ubuntu2.16                amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
 ii  libdata-dump-perl                1.23-1                            all          Perl module to help dump data structures
 ii  libdata-optlist-perl             0.110-1                           all          module to parse and validate simple name/value option pairs
 ii  libdb5.3:amd64                   5.3.28+dfsg1-0.6ubuntu2           amd64        Berkeley v5.3 Database Libraries [runtime]
@@ -2542,7 +2542,7 @@ ii  libyaml-libyaml-perl             0.81+repack-1                     amd64    
 ii  libzstd1:amd64                   1.4.4+dfsg-3ubuntu0.1             amd64        fast lossless compression algorithm
 ii  licensecheck                     3.0.45-1                          all          simple license checker for source files
 ii  lintian                          2.62.0ubuntu2.2                   all          Debian package checker
-ii  linux-libc-dev:amd64             5.4.0-139.156                     amd64        Linux Kernel Headers for development
+ii  linux-libc-dev:amd64             5.4.0-144.161                     amd64        Linux Kernel Headers for development
 ii  login                            1:4.8.1-1ubuntu5.20.04.2          amd64        system login tools
 ii  logsave                          1.45.5-2ubuntu1                   amd64        save the output of a command in a log file
 ii  lsb-base                         11.1.0ubuntu2                     all          Linux Standard Base init script functionality
@@ -2609,43 +2609,43 @@ ii  xxd                              2:8.1.2269-1ubuntu5.11            amd64    
 ii  xz-utils                         5.2.4-1ubuntu1.1                  amd64        XZ-format compression utilities
 ii  zlib1g:amd64                     1:1.2.11.dfsg-2ubuntu1.5          amd64        compression library - runtime
 ii  zlib1g-dev:amd64                 1:1.2.11.dfsg-2ubuntu1.5          amd64        compression library - development
-Removing intermediate container 372bcd0c4227
- ---> 7a3cd0694850
+Removing intermediate container f829ac92ceeb
+ ---> f74c03c2f4a4
 Step 4/11 : RUN git clone --branch main https://github.com/UniconSoftware/shim
- ---> Running in 28b762a3e8f7
+ ---> Running in 38954e657b5d
 [91mCloning into 'shim'...
-[0mRemoving intermediate container 28b762a3e8f7
- ---> 6bdb72b8a6ce
+[0mRemoving intermediate container 38954e657b5d
+ ---> c38ea4154875
 Step 5/11 : WORKDIR /shim
- ---> Running in d1bf1e6eb98d
-Removing intermediate container d1bf1e6eb98d
- ---> fd8ac8d7de3b
+ ---> Running in 01cc47e65d11
+Removing intermediate container 01cc47e65d11
+ ---> 912c9a9fd64d
 Step 6/11 : RUN git show --no-patch
- ---> Running in 7ef43eae137a
-commit 79f35220d07cbad8c42780d65f9adeec57d3e823
+ ---> Running in 2ecad85c702f
+commit c7672670bc3cb81d591ddadf94697cb31ac7aaf4
 Author: Christoph Biedl <christoph.biedl@unicon.com>
-Date:   Fri Aug 19 14:25:39 2022 +0200
+Date:   Mon Mar 6 09:08:17 2023 +0100
 
-    Add the the "Unicon Secure Boot CA 2022" certificate
-Removing intermediate container 7ef43eae137a
- ---> b0d8b9e69b94
+    Add entry to SBAT definition
+Removing intermediate container 2ecad85c702f
+ ---> 3e6e8e16d184
 Step 7/11 : RUN git branch --move main master
- ---> Running in 83841c9b064c
-Removing intermediate container 83841c9b064c
- ---> 4ebb4fb03228
+ ---> Running in 8a3b9621192f
+Removing intermediate container 8a3b9621192f
+ ---> 965c2f9f8a8b
 Step 8/11 : RUN make update
- ---> Running in 04fa866d5ed2
+ ---> Running in 1b63c7c90c3b
 git submodule update --init --recursive
 [91mSubmodule 'gnu-efi' (https://github.com/rhboot/gnu-efi.git) registered for path 'gnu-efi'
 [0m[91mCloning into '/shim/gnu-efi'...
 [0mSubmodule path 'gnu-efi': checked out '03670e14f263ad571bf0f39dffa9b8d23535f4d3'
-Removing intermediate container 04fa866d5ed2
- ---> 2ba014ac2de1
+Removing intermediate container 1b63c7c90c3b
+ ---> 758ba22d8e42
 Step 9/11 : RUN make VENDOR_CERT_FILE=uc-sb-signing.crt.pem
- ---> Running in 869c9d2f0ba3
+ ---> Running in 13a20c1283f3
 sed	-e "s,@@VERSION@@,15.7," \
 	-e "s,@@UNAME@@,Linux x86_64 x86_64 x86_64 GNU/Linux," \
-	-e "s,@@COMMIT@@,79f35220d07cbad8c42780d65f9adeec57d3e823," \
+	-e "s,@@COMMIT@@,c7672670bc3cb81d591ddadf94697cb31ac7aaf4," \
 	< /shim/version.c.in > version.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o shim.o shim.c
 gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.7/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o globals.o globals.c
@@ -3225,7 +3225,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	--target efi-app-x86_64 shimx64.so shimx64.efi
 ./post-process-pe -vv  shimx64.efi
 set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x000f766e to 0x000e776f
+fix_checksum():412: Updating checksum from 0x000f27b3 to 0x000f28b3
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
@@ -3263,7 +3263,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	--target efi-app-x86_64 mmx64.so mmx64.efi
 ./post-process-pe -vv  mmx64.efi
 set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x000d6e62 to 0x000d6f62
+fix_checksum():412: Updating checksum from 0x000d846a to 0x000d856a
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
@@ -3271,16 +3271,16 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
 ./post-process-pe -vv  fbx64.efi
 set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x00022d66 to 0x00022e66
-Removing intermediate container 869c9d2f0ba3
- ---> 7defd51eab07
+fix_checksum():412: Updating checksum from 0x0002436e to 0x0002446e
+Removing intermediate container 13a20c1283f3
+ ---> 9877eabd56fd
 Step 10/11 : WORKDIR /
- ---> Running in ec84cfc14663
-Removing intermediate container ec84cfc14663
- ---> 9cb487d7b272
+ ---> Running in 96d821004d19
+Removing intermediate container 96d821004d19
+ ---> 5628568b22c1
 Step 11/11 : RUN hexdump -Cv /shim-review/shimx64.efi > orig &&     hexdump -Cv /shim/shimx64.efi > build &&     diff -u orig build
- ---> Running in cf9a212b3883
-Removing intermediate container cf9a212b3883
- ---> e1d03774b1b6
-Successfully built e1d03774b1b6
-Fri Feb 24 16:59:01 CET 2023: End work
+ ---> Running in 5adc2e7aaaa1
+Removing intermediate container 5adc2e7aaaa1
+ ---> f2d93bc7bf29
+Successfully built f2d93bc7bf29
+Mon Mar  6 09:24:42 CET 2023: End work
