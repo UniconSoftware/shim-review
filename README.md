@@ -209,7 +209,7 @@ Not applicable as this is the first shim to be signed.
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-4ef1179453b093781de767ea5821da8b1abd58eaf00ef56c0c85e1852b93477d  shimx64.efi
+36683a917ef0b75f895612bf66e0f839b48658204af730fbfa1a4000f1d7b883  shimx64.efi
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -234,7 +234,7 @@ No
 shim:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.elux,1,Unicon,grub2,15.7,mail:product-security@unicon.com
+shim.elux,1,Unicon,shim,15.7,mail:product-security@unicon.com
 
 grub2:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
