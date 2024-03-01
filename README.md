@@ -74,8 +74,7 @@ Please create your shim binaries starting with the 15.8 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.8 and contains the appropriate gnu-efi source.
 
 *******************************************************************************
-Yes. the git repository was based on shim-15.7.tar.bz2
-(sha256: 87cdeb190e5c7fe441769dde11a1b507ed7328e70a178cd9858c7ac7065cfade)
+The build is based on the https://github.com/rhboot/ git repository, tag 15.8
 
 *******************************************************************************
 ### URL for a repo that contains the exact code which was built to get this binary:
@@ -85,35 +84,27 @@ https://github.com/UniconSoftware/shim
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-"Make sbat_var.S parse right with buggy gcc/binutils"
-https://github.com/rhboot/shim/commit/657b2483ca6e9fcf2ad8ac7ee577ff546d24c3aa
-Justification: Our old toolchain requires that fix.
-
-"Enable the NX compatibility flag by default"
-https://github.com/rhboot/shim/commit/7c7642530fab73facaf3eac233cfbce29e10b0ef
-Justification: From other reviews it seemed this is mandatory now.
-
-"CryptoPkg/BaseCryptLib: Fix buffer overflow issue in realloc wrapper"
-https://github.com/rhboot/shim/commit/89972ae25c133df31290f394413c19ea903219ad
-Justification: This looks like an important bugfix.
-
-They are included in the repo mentioned in the previous question.
+None
 
 *******************************************************************************
 ### Do you have the NX bit set in your shim? If so, is your entire boot stack NX-compatible and what testing have you done to ensure such compatibility?
 
 See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-shim-community/ba-p/3976522 for more details on the signing of shim without NX bit.
 *******************************************************************************
-[your text here]
+That bit is currently not set in shim and grub2, but in the kernel. We do not the respective build systems and just wait them to enable it once they consider it wise to do so.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 *******************************************************************************
-We will use the sources as provided in Debian 11 ("bullseye")and use the result of dpkg-buildpackage.
+Some extra complexity here since we've switched the grub sources between the current, stable release and the future new release.
 
-We track the Debian repositories to learn about any important updates. 
+For "future" releases, we use the sources as provided by Ubuntu 22.04 ("jammy"), currently 2.06-2ubuntu14.4.
 
-We would prefer to follow Ubuntu 22.04 ("jammy") but it seems they haven't fixed the issues from last November (CVE-2022-2601 and CVE-2022-3775) yet.
+For "current" releases, we use the sources as provided by Debian 11 ("bullseye"), currently 2.06-3~deb11u6.
+
+For both, we use the result of dpkg-buildpackage. And we track the respective repositories to learn about any important updates. 
+
+There are local modifications that do not touch the code. They change the embedded configuration, add an additional line to the SBAT record, and handle some gotchas in the test suite.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of GRUB2 affected by any of the CVEs in the July 2020, the March 2021, the June 7th 2022, the November 15th 2022, or 3rd of October 2023 GRUB2 CVE list, have fixes for all these CVEs been applied?
@@ -159,7 +150,7 @@ We would prefer to follow Ubuntu 22.04 ("jammy") but it seems they haven't fixed
 *******************************************************************************
 We haven't released a shim yet, so possibly this doesn't apply anyway.
 
-The general idea about security updates is: By using the latest sources provided by Debian (see above), we assume we are not affected by any of these issues listed above.
+The general idea about security updates is: By using the latest sources provided by Ubuntu/Debian (see above), we assume we are not affected by any of these issues listed above.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
@@ -180,7 +171,7 @@ Yes
 ### Is upstream commit [75b0cea7bf307f362057cc778efe89af4c615354 "ACPI: configfs: Disallow loading ACPI tables when locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=75b0cea7bf307f362057cc778efe89af4c615354) applied?
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 *******************************************************************************
-We follow the stable Linux kernel series, currently on 6.1.x. These commits are included there.
+We follow the stable Linux kernel series, currently on 6.1.y and 6.6.y. These commits are included there.
 
 *******************************************************************************
 ### Do you build your signed kernel with additional local patches? What do they do?
@@ -193,7 +184,7 @@ And there are the patches that support lockdown (see below).
 ### Do you use an ephemeral key for signing kernel modules?
 ### If not, please describe how you ensure that one kernel build does not load modules built for another kernel.
 *******************************************************************************
-[your text here]
+We are indeed using an ephemeral key for that purpose. Extra care is taken to make sure this key cannot leak, for example by invalidating it as soon as it is no longer needed.
 
 *******************************************************************************
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -211,11 +202,11 @@ We are not re-using certificates.
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 ### If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 *******************************************************************************
-The build was done on Ubuntu 20.04 ("focal"), so it's
+The build was done on Ubuntu 22.04 ("jammy"), so it's
 
-- gcc: 4:9.3.0-1ubuntu2
-- binutils: 2.34-6ubuntu1.3
-- gnu-efi as included in the shim 15.7 tar ball
+- gcc: 4:11.2.0-1ubuntu1
+- binutils: 2.38-3ubuntu1
+- gnu-efi Subproject commit 328951d3dcb5ff97f5a7c7a362b006626fada000
 
 *******************************************************************************
 ### Which files in this repo are the logs for your build?
@@ -270,14 +261,20 @@ and only append your own. More information on how SBAT works can be found
 
 shim:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
-shim.elux,1,Unicon,shim,15.7,mail:product-security@unicon.com
+shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.elux,1,Unicon,shim,15.8,mail:product-security@unicon.com
 
-grub2:
+grub2 ("future"):
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-grub.debian,4,Debian,grub2,2.06-3~deb11u5,https://tracker.debian.org/pkg/grub2
-grub.elux,1,Unicon,grub2,grub2,2.06-3~deb11u5unicon1,mail:product-security@unicon.com
+grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu14.4,https://www.ubuntu.com/
+grub.elux,1,Unicon,grub2,2.06-2ubuntu14.4elux7,mail:product-security@unicon.com
+
+grub2 ("current"):
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+grub.debian,4,Debian,grub2,2.06-3~deb11u6,https://tracker.debian.org/pkg/grub2
+grub.elux,1,Unicon,grub2,2.06-3~deb11u6unicon1,mail:product-security@unicon.com
 
 fwupd:
 sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
@@ -288,25 +285,29 @@ fwupd-efi.elux,1,Unicon,fwupd,1.2-2~20.04.1unicon1,mail:product-security@unicon.
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, which modules are built into your signed GRUB2 image?
 *******************************************************************************
-As mentioned earlier, we will follow Debian's policy on building the grub images as closely as possible. Their list (`from debian/build-efi-images`) is:
+As mentioned earlier, we will follow Ubuntu's/Debian's policy on building the grub images as closely as possible. Their list (from `debian/build-efi-images`) is for "current":
 
 all_video boot btrfs cat chain configfile cpuid cryptodisk echo efifwsetup efinet ext2 f2fs fat font gcry_arcfour gcry_blowfish gcry_camellia gcry_cast5 gcry_crc gcry_des gcry_dsa gcry_idea gcry_md4 gcry_md5 gcry_rfc2268 gcry_rijndael gcry_rmd160 gcry_rsa gcry_seed gcry_serpent gcry_sha1 gcry_sha256 gcry_sha512 gcry_tiger gcry_twofish gcry_whirlpool gettext gfxmenu gfxterm gfxterm_background gzio halt help hfsplus iso9660 jfs jpeg keystatus linux linuxefi loadenv loopback ls lsefi lsefimmap lsefisystab lssal luks lvm mdraid09 mdraid1x memdisk minicmd normal ntfs part_apple part_gpt part_msdos password_pbkdf2 play png probe raid5rec raid6rec reboot regexp search search_fs_file search_fs_uuid search_label sleep squash4 test tpm true video xfs zfs zfscrypt zfsinfo
 
-and will will not remove anything for simplicity. We also include
+where "future", in accordance with Ubuntu, lacks f2fs and jfs, but adds smbios, and we do not remove anything for simplicity.
+
+We however include
 
 * net
 * tftp
 
-
 *******************************************************************************
 ### If you are using systemd-boot on arm64 or riscv, is the fix for [unverified Devicetree Blob loading](https://github.com/systemd/systemd/security/advisories/GHSA-6m6p-rjcq-334c) included?
 *******************************************************************************
-[your text here]
+Not applicable
 
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-The used bootloader is grub2, sources are as provided by Debian 11 ("bullseye"), version 2.06-3~deb11u5.
+The used bootloader is grub2, sources are taken from, as mentioned above:
+
+* "current" Debian 11 ("bullseye"), version 2.06-3~deb11u5.
+* "future" Ubuntu 22.04 ("jammy"), version 2.06-2ubuntu14.4.
 
 *******************************************************************************
 ### If your SHIM launches any other components, please provide further details on what is launched.
@@ -330,7 +331,7 @@ The Sources of all out-of-tree modules are taken from a trusted source (usually 
 *******************************************************************************
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB2)?
 *******************************************************************************
-No
+Yes, we load grub2.
 
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
