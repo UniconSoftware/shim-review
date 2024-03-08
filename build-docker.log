@@ -1,22 +1,15 @@
-Wed Feb 21 10:48:46 AM CET 2024: Begin work
+Fri Mar  8 05:50:16 PM CET 2024: Begin work
 DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
             Install the buildx component to build images with BuildKit:
             https://docs.docker.com/go/buildx/
 
-Sending build context to Docker daemon  963.1kB
+Sending build context to Docker daemon  962.6kB
 Step 1/11 : FROM ubuntu:jammy
-jammy: Pulling from library/ubuntu
-01007420e9b0: Pulling fs layer
-01007420e9b0: Verifying Checksum
-01007420e9b0: Download complete
-01007420e9b0: Pull complete
-Digest: sha256:f9d633ff6640178c2d0525017174a688e2c1aef28f0a0130b26bd5554491f0da
-Status: Downloaded newer image for ubuntu:jammy
  ---> 3db8720ecbf5
 Step 2/11 : COPY . /shim-review
- ---> 65b41674500c
+ ---> 99dbdbbc0060
 Step 3/11 : RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list &&     apt update -y &&     DEBIAN_FRONTEND=noninteractive apt install -y devscripts &&     apt build-dep -y shim &&     cat /etc/apt/sources.list &&     dpkg -l
- ---> Running in 22a606044238
+ ---> Running in 3b665591a6c5
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -24,39 +17,39 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
 Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
-Get:5 http://security.ubuntu.com/ubuntu jammy-security/universe Sources [231 kB]
-Get:6 http://security.ubuntu.com/ubuntu jammy-security/restricted Sources [65.5 kB]
-Get:7 http://security.ubuntu.com/ubuntu jammy-security/multiverse Sources [12.1 kB]
-Get:8 http://archive.ubuntu.com/ubuntu jammy/restricted Sources [28.2 kB]
-Get:9 http://archive.ubuntu.com/ubuntu jammy/main Sources [1668 kB]
-Get:10 http://security.ubuntu.com/ubuntu jammy-security/main Sources [316 kB]
-Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1070 kB]
-Get:12 http://archive.ubuntu.com/ubuntu jammy/universe Sources [22.0 MB]
-Get:13 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1463 kB]
-Get:14 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1796 kB]
-Get:15 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.6 kB]
-Get:16 http://archive.ubuntu.com/ubuntu jammy/multiverse Sources [361 kB]
-Get:17 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
-Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
-Get:19 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
-Get:20 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
-Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Sources [21.8 kB]
-Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Sources [69.8 kB]
-Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/universe Sources [397 kB]
-Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main Sources [595 kB]
-Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1343 kB]
-Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1834 kB]
-Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1742 kB]
-Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [50.4 kB]
-Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/main Sources [9387 B]
-Get:30 http://archive.ubuntu.com/ubuntu jammy-backports/universe Sources [10.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/universe Sources [22.0 MB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/universe Sources [238 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/restricted Sources [65.8 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main Sources [319 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/multiverse Sources [12.1 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/multiverse Sources [361 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/main Sources [1668 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy/restricted Sources [28.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1561 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1951 kB]
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1076 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Sources [69.9 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/universe Sources [404 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Sources [21.8 kB]
+Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main Sources [598 kB]
+Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1349 kB]
+Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1994 kB]
+Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [50.4 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1843 kB]
+Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/universe Sources [10.6 kB]
+Get:30 http://archive.ubuntu.com/ubuntu jammy-backports/main Sources [9387 B]
 Get:31 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.1 kB]
 Get:32 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [50.4 kB]
-Fetched 55.5 MB in 7s (8032 kB/s)
+Fetched 56.0 MB in 5s (10.5 MB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+5 packages can be upgraded. Run 'apt list --upgradable' to see them.
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -257,7 +250,7 @@ The following NEW packages will be installed:
   python3-pkg-resources python3-requests python3-six python3-unidiff
   python3-urllib3 python3-xdg python3.10 python3.10-minimal readline-common
   rpcsvc-proto strace t1utils ucf unzip wdiff xauth xz-utils zstd
-0 upgraded, 347 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 347 newly installed, 0 to remove and 5 not upgraded.
 Need to get 128 MB of archives.
 After this operation, 464 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblocale-gettext-perl amd64 1.07-4build3 [17.1 kB]
@@ -279,15 +272,15 @@ Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgdbm6 amd64 1.23-1 [
 Get:17 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgdbm-compat4 amd64 1.23-1 [6606 B]
 Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libperl5.34 amd64 5.34.0-3ubuntu1.3 [4820 kB]
 Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 perl amd64 5.34.0-3ubuntu1.3 [232 kB]
-Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssl amd64 3.0.2-0ubuntu1.14 [1184 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 openssl amd64 3.0.2-0ubuntu1.15 [1186 kB]
 Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ca-certificates all 20230311ubuntu0.22.04.1 [155 kB]
 Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 distro-info-data all 0.52ubuntu0.6 [5160 B]
 Get:23 http://archive.ubuntu.com/ubuntu jammy/main amd64 iso-codes all 4.9.0-1 [3459 kB]
-Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 less amd64 590-1ubuntu0.22.04.1 [143 kB]
+Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 less amd64 590-1ubuntu0.22.04.2 [143 kB]
 Get:25 http://archive.ubuntu.com/ubuntu jammy/main amd64 libmd0 amd64 1.0.4-1build1 [23.0 kB]
 Get:26 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbsd0 amd64 0.11.5-1 [44.8 kB]
 Get:27 http://archive.ubuntu.com/ubuntu jammy/main amd64 libicu70 amd64 70.1-2 [10.6 MB]
-Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxml2 amd64 2.9.13+dfsg-1ubuntu0.3 [763 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxml2 amd64 2.9.13+dfsg-1ubuntu0.4 [763 kB]
 Get:29 http://archive.ubuntu.com/ubuntu jammy/main amd64 libyaml-0-2 amd64 0.2.2-1build2 [51.6 kB]
 Get:30 http://archive.ubuntu.com/ubuntu jammy/main amd64 lsb-release all 11.1.0ubuntu4 [10.8 kB]
 Get:31 http://archive.ubuntu.com/ubuntu jammy/main amd64 netbase all 6.3 [12.9 kB]
@@ -324,14 +317,14 @@ Get:61 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libunwind8 amd6
 Get:62 http://archive.ubuntu.com/ubuntu jammy/main amd64 strace amd64 5.16-0ubuntu3 [567 kB]
 Get:63 http://archive.ubuntu.com/ubuntu jammy/main amd64 xauth amd64 1:1.1-1build2 [27.5 kB]
 Get:64 http://archive.ubuntu.com/ubuntu jammy/main amd64 xz-utils amd64 5.2.5-2ubuntu1 [84.8 kB]
-Get:65 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils-common amd64 2.38-4ubuntu2.5 [222 kB]
-Get:66 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libbinutils amd64 2.38-4ubuntu2.5 [662 kB]
-Get:67 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libctf-nobfd0 amd64 2.38-4ubuntu2.5 [108 kB]
-Get:68 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libctf0 amd64 2.38-4ubuntu2.5 [103 kB]
-Get:69 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.38-4ubuntu2.5 [2326 kB]
-Get:70 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils amd64 2.38-4ubuntu2.5 [3202 B]
+Get:65 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils-common amd64 2.38-4ubuntu2.6 [222 kB]
+Get:66 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libbinutils amd64 2.38-4ubuntu2.6 [662 kB]
+Get:67 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libctf-nobfd0 amd64 2.38-4ubuntu2.6 [108 kB]
+Get:68 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libctf0 amd64 2.38-4ubuntu2.6 [103 kB]
+Get:69 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.38-4ubuntu2.6 [2326 kB]
+Get:70 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 binutils amd64 2.38-4ubuntu2.6 [3200 B]
 Get:71 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc-dev-bin amd64 2.35-0ubuntu3.6 [20.3 kB]
-Get:72 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-libc-dev amd64 5.15.0-94.104 [1355 kB]
+Get:72 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 linux-libc-dev amd64 5.15.0-100.110 [1348 kB]
 Get:73 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcrypt-dev amd64 1:4.4.27-1 [112 kB]
 Get:74 http://archive.ubuntu.com/ubuntu jammy/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu6 [68.5 kB]
 Get:75 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtirpc-dev amd64 1.3.2-2ubuntu0.1 [192 kB]
@@ -359,11 +352,11 @@ Get:96 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libstdc++-11-de
 Get:97 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 g++-11 amd64 11.4.0-1ubuntu1~22.04 [11.4 MB]
 Get:98 http://archive.ubuntu.com/ubuntu jammy/main amd64 g++ amd64 4:11.2.0-1ubuntu1 [1412 B]
 Get:99 http://archive.ubuntu.com/ubuntu jammy/main amd64 make amd64 4.3-4.1build1 [180 kB]
-Get:100 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libdpkg-perl all 1.21.1ubuntu2.2 [237 kB]
+Get:100 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libdpkg-perl all 1.21.1ubuntu2.3 [237 kB]
 Get:101 http://archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
 Get:102 http://archive.ubuntu.com/ubuntu jammy/main amd64 patch amd64 2.7.6-7build2 [109 kB]
 Get:103 http://archive.ubuntu.com/ubuntu jammy/main amd64 lto-disabled-list all 24 [12.5 kB]
-Get:104 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 dpkg-dev all 1.21.1ubuntu2.2 [922 kB]
+Get:104 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 dpkg-dev all 1.21.1ubuntu2.3 [922 kB]
 Get:105 http://archive.ubuntu.com/ubuntu jammy/main amd64 build-essential amd64 12.9ubuntu3 [4744 B]
 Get:106 http://archive.ubuntu.com/ubuntu jammy/main amd64 libbrotli1 amd64 1.0.9-2build6 [315 kB]
 Get:107 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg2-3ubuntu1.2 [20.5 kB]
@@ -435,8 +428,8 @@ Get:172 http://archive.ubuntu.com/ubuntu jammy/main amd64 diffstat amd64 1.64-1b
 Get:173 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-chardet all 4.0.0-1 [98.0 kB]
 Get:174 http://archive.ubuntu.com/ubuntu jammy/main amd64 zstd amd64 1.4.8+dfsg-3build1 [603 kB]
 Get:175 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-debian all 0.1.43ubuntu1.1 [107 kB]
-Get:176 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgpgme11 amd64 1.16.0-1.2ubuntu4.1 [136 kB]
-Get:177 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-gpg amd64 1.16.0-1.2ubuntu4.1 [214 kB]
+Get:176 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgpgme11 amd64 1.16.0-1.2ubuntu4.2 [136 kB]
+Get:177 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-gpg amd64 1.16.0-1.2ubuntu4.2 [214 kB]
 Get:178 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 dput all 1.1.0ubuntu2.1 [44.7 kB]
 Get:179 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-dejavu-core all 2.37-2build1 [1041 kB]
 Get:180 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig-config all 2.13.1-4.2ubuntu5 [29.1 kB]
@@ -464,7 +457,7 @@ Get:201 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg8 amd64 8c-2ubu
 Get:202 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdeflate0 amd64 1.10-2 [70.9 kB]
 Get:203 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.22.04.1 [29.2 kB]
 Get:204 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebp7 amd64 1.2.2-2ubuntu0.22.04.2 [206 kB]
-Get:205 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.7 [185 kB]
+Get:205 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.8 [185 kB]
 Get:206 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxpm4 amd64 1:3.5.12-1ubuntu0.22.04.2 [36.7 kB]
 Get:207 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgd3 amd64 2.3.0-2ubuntu2 [129 kB]
 Get:208 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libc-devtools amd64 2.35-0ubuntu3.6 [29.0 kB]
@@ -480,7 +473,7 @@ Get:217 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsub-exporter-perl a
 Get:218 http://archive.ubuntu.com/ubuntu jammy/main amd64 libconst-fast-perl all 0.014-1.1 [7756 B]
 Get:219 http://archive.ubuntu.com/ubuntu jammy/main amd64 libwant-perl amd64 0.29-1build7 [24.9 kB]
 Get:220 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcontextual-return-perl all 0.004014-2 [53.1 kB]
-Get:221 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcpanel-json-xs-perl amd64 4.27-1build1 [114 kB]
+Get:221 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcpanel-json-xs-perl amd64 4.27-1ubuntu0.1 [115 kB]
 Get:222 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdevel-stacktrace-perl all 2.0400-1 [22.7 kB]
 Get:223 http://archive.ubuntu.com/ubuntu jammy/main amd64 libexception-class-perl all 1.45-1 [28.6 kB]
 Get:224 http://archive.ubuntu.com/ubuntu jammy/main amd64 libiterator-perl all 0.03+ds1-1.1 [18.2 kB]
@@ -608,7 +601,7 @@ Get:345 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-xdg all 0.27-2
 Get:346 http://archive.ubuntu.com/ubuntu jammy/main amd64 libauthen-sasl-perl all 2.1600-1.1 [43.1 kB]
 Get:347 http://archive.ubuntu.com/ubuntu jammy/main amd64 python3-magic all 2:0.4.24-2 [12.6 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 128 MB in 35s (3619 kB/s)
+[0mFetched 128 MB in 39s (3285 kB/s)
 Selecting previously unselected package liblocale-gettext-perl.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4393 files and directories currently installed.)
 Preparing to unpack .../liblocale-gettext-perl_1.07-4build3_amd64.deb ...
@@ -674,8 +667,8 @@ Selecting previously unselected package perl.
 Preparing to unpack .../005-perl_5.34.0-3ubuntu1.3_amd64.deb ...
 Unpacking perl (5.34.0-3ubuntu1.3) ...
 Selecting previously unselected package openssl.
-Preparing to unpack .../006-openssl_3.0.2-0ubuntu1.14_amd64.deb ...
-Unpacking openssl (3.0.2-0ubuntu1.14) ...
+Preparing to unpack .../006-openssl_3.0.2-0ubuntu1.15_amd64.deb ...
+Unpacking openssl (3.0.2-0ubuntu1.15) ...
 Selecting previously unselected package ca-certificates.
 Preparing to unpack .../007-ca-certificates_20230311ubuntu0.22.04.1_all.deb ...
 Unpacking ca-certificates (20230311ubuntu0.22.04.1) ...
@@ -686,8 +679,8 @@ Selecting previously unselected package iso-codes.
 Preparing to unpack .../009-iso-codes_4.9.0-1_all.deb ...
 Unpacking iso-codes (4.9.0-1) ...
 Selecting previously unselected package less.
-Preparing to unpack .../010-less_590-1ubuntu0.22.04.1_amd64.deb ...
-Unpacking less (590-1ubuntu0.22.04.1) ...
+Preparing to unpack .../010-less_590-1ubuntu0.22.04.2_amd64.deb ...
+Unpacking less (590-1ubuntu0.22.04.2) ...
 Selecting previously unselected package libmd0:amd64.
 Preparing to unpack .../011-libmd0_1.0.4-1build1_amd64.deb ...
 Unpacking libmd0:amd64 (1.0.4-1build1) ...
@@ -698,8 +691,8 @@ Selecting previously unselected package libicu70:amd64.
 Preparing to unpack .../013-libicu70_70.1-2_amd64.deb ...
 Unpacking libicu70:amd64 (70.1-2) ...
 Selecting previously unselected package libxml2:amd64.
-Preparing to unpack .../014-libxml2_2.9.13+dfsg-1ubuntu0.3_amd64.deb ...
-Unpacking libxml2:amd64 (2.9.13+dfsg-1ubuntu0.3) ...
+Preparing to unpack .../014-libxml2_2.9.13+dfsg-1ubuntu0.4_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.13+dfsg-1ubuntu0.4) ...
 Selecting previously unselected package libyaml-0-2:amd64.
 Preparing to unpack .../015-libyaml-0-2_0.2.2-1build2_amd64.deb ...
 Unpacking libyaml-0-2:amd64 (0.2.2-1build2) ...
@@ -810,29 +803,29 @@ Selecting previously unselected package xz-utils.
 Preparing to unpack .../050-xz-utils_5.2.5-2ubuntu1_amd64.deb ...
 Unpacking xz-utils (5.2.5-2ubuntu1) ...
 Selecting previously unselected package binutils-common:amd64.
-Preparing to unpack .../051-binutils-common_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking binutils-common:amd64 (2.38-4ubuntu2.5) ...
+Preparing to unpack .../051-binutils-common_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking binutils-common:amd64 (2.38-4ubuntu2.6) ...
 Selecting previously unselected package libbinutils:amd64.
-Preparing to unpack .../052-libbinutils_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking libbinutils:amd64 (2.38-4ubuntu2.5) ...
+Preparing to unpack .../052-libbinutils_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking libbinutils:amd64 (2.38-4ubuntu2.6) ...
 Selecting previously unselected package libctf-nobfd0:amd64.
-Preparing to unpack .../053-libctf-nobfd0_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking libctf-nobfd0:amd64 (2.38-4ubuntu2.5) ...
+Preparing to unpack .../053-libctf-nobfd0_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking libctf-nobfd0:amd64 (2.38-4ubuntu2.6) ...
 Selecting previously unselected package libctf0:amd64.
-Preparing to unpack .../054-libctf0_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking libctf0:amd64 (2.38-4ubuntu2.5) ...
+Preparing to unpack .../054-libctf0_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking libctf0:amd64 (2.38-4ubuntu2.6) ...
 Selecting previously unselected package binutils-x86-64-linux-gnu.
-Preparing to unpack .../055-binutils-x86-64-linux-gnu_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking binutils-x86-64-linux-gnu (2.38-4ubuntu2.5) ...
+Preparing to unpack .../055-binutils-x86-64-linux-gnu_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.38-4ubuntu2.6) ...
 Selecting previously unselected package binutils.
-Preparing to unpack .../056-binutils_2.38-4ubuntu2.5_amd64.deb ...
-Unpacking binutils (2.38-4ubuntu2.5) ...
+Preparing to unpack .../056-binutils_2.38-4ubuntu2.6_amd64.deb ...
+Unpacking binutils (2.38-4ubuntu2.6) ...
 Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../057-libc-dev-bin_2.35-0ubuntu3.6_amd64.deb ...
 Unpacking libc-dev-bin (2.35-0ubuntu3.6) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../058-linux-libc-dev_5.15.0-94.104_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (5.15.0-94.104) ...
+Preparing to unpack .../058-linux-libc-dev_5.15.0-100.110_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (5.15.0-100.110) ...
 Selecting previously unselected package libcrypt-dev:amd64.
 Preparing to unpack .../059-libcrypt-dev_1%3a4.4.27-1_amd64.deb ...
 Unpacking libcrypt-dev:amd64 (1:4.4.27-1) ...
@@ -915,8 +908,8 @@ Selecting previously unselected package make.
 Preparing to unpack .../085-make_4.3-4.1build1_amd64.deb ...
 Unpacking make (4.3-4.1build1) ...
 Selecting previously unselected package libdpkg-perl.
-Preparing to unpack .../086-libdpkg-perl_1.21.1ubuntu2.2_all.deb ...
-Unpacking libdpkg-perl (1.21.1ubuntu2.2) ...
+Preparing to unpack .../086-libdpkg-perl_1.21.1ubuntu2.3_all.deb ...
+Unpacking libdpkg-perl (1.21.1ubuntu2.3) ...
 Selecting previously unselected package bzip2.
 Preparing to unpack .../087-bzip2_1.0.8-5build1_amd64.deb ...
 Unpacking bzip2 (1.0.8-5build1) ...
@@ -927,8 +920,8 @@ Selecting previously unselected package lto-disabled-list.
 Preparing to unpack .../089-lto-disabled-list_24_all.deb ...
 Unpacking lto-disabled-list (24) ...
 Selecting previously unselected package dpkg-dev.
-Preparing to unpack .../090-dpkg-dev_1.21.1ubuntu2.2_all.deb ...
-Unpacking dpkg-dev (1.21.1ubuntu2.2) ...
+Preparing to unpack .../090-dpkg-dev_1.21.1ubuntu2.3_all.deb ...
+Unpacking dpkg-dev (1.21.1ubuntu2.3) ...
 Selecting previously unselected package build-essential.
 Preparing to unpack .../091-build-essential_12.9ubuntu3_amd64.deb ...
 Unpacking build-essential (12.9ubuntu3) ...
@@ -1143,11 +1136,11 @@ Selecting previously unselected package python3-debian.
 Preparing to unpack .../161-python3-debian_0.1.43ubuntu1.1_all.deb ...
 Unpacking python3-debian (0.1.43ubuntu1.1) ...
 Selecting previously unselected package libgpgme11:amd64.
-Preparing to unpack .../162-libgpgme11_1.16.0-1.2ubuntu4.1_amd64.deb ...
-Unpacking libgpgme11:amd64 (1.16.0-1.2ubuntu4.1) ...
+Preparing to unpack .../162-libgpgme11_1.16.0-1.2ubuntu4.2_amd64.deb ...
+Unpacking libgpgme11:amd64 (1.16.0-1.2ubuntu4.2) ...
 Selecting previously unselected package python3-gpg.
-Preparing to unpack .../163-python3-gpg_1.16.0-1.2ubuntu4.1_amd64.deb ...
-Unpacking python3-gpg (1.16.0-1.2ubuntu4.1) ...
+Preparing to unpack .../163-python3-gpg_1.16.0-1.2ubuntu4.2_amd64.deb ...
+Unpacking python3-gpg (1.16.0-1.2ubuntu4.2) ...
 Selecting previously unselected package dput.
 Preparing to unpack .../164-dput_1.1.0ubuntu2.1_all.deb ...
 Unpacking dput (1.1.0ubuntu2.1) ...
@@ -1230,8 +1223,8 @@ Selecting previously unselected package libwebp7:amd64.
 Preparing to unpack .../190-libwebp7_1.2.2-2ubuntu0.22.04.2_amd64.deb ...
 Unpacking libwebp7:amd64 (1.2.2-2ubuntu0.22.04.2) ...
 Selecting previously unselected package libtiff5:amd64.
-Preparing to unpack .../191-libtiff5_4.3.0-6ubuntu0.7_amd64.deb ...
-Unpacking libtiff5:amd64 (4.3.0-6ubuntu0.7) ...
+Preparing to unpack .../191-libtiff5_4.3.0-6ubuntu0.8_amd64.deb ...
+Unpacking libtiff5:amd64 (4.3.0-6ubuntu0.8) ...
 Selecting previously unselected package libxpm4:amd64.
 Preparing to unpack .../192-libxpm4_1%3a3.5.12-1ubuntu0.22.04.2_amd64.deb ...
 Unpacking libxpm4:amd64 (1:3.5.12-1ubuntu0.22.04.2) ...
@@ -1278,8 +1271,8 @@ Selecting previously unselected package libcontextual-return-perl.
 Preparing to unpack .../206-libcontextual-return-perl_0.004014-2_all.deb ...
 Unpacking libcontextual-return-perl (0.004014-2) ...
 Selecting previously unselected package libcpanel-json-xs-perl:amd64.
-Preparing to unpack .../207-libcpanel-json-xs-perl_4.27-1build1_amd64.deb ...
-Unpacking libcpanel-json-xs-perl:amd64 (4.27-1build1) ...
+Preparing to unpack .../207-libcpanel-json-xs-perl_4.27-1ubuntu0.1_amd64.deb ...
+Unpacking libcpanel-json-xs-perl:amd64 (4.27-1ubuntu0.1) ...
 Selecting previously unselected package libdevel-stacktrace-perl.
 Preparing to unpack .../208-libdevel-stacktrace-perl_2.0400-1_all.deb ...
 Unpacking libdevel-stacktrace-perl (2.0400-1) ...
@@ -1682,14 +1675,14 @@ Setting up libcbor0.8:amd64 (0.8.0-2ubuntu1) ...
 Setting up libbrotli1:amd64 (1.0.9-2build6) ...
 Setting up libsqlite3-0:amd64 (3.37.2-2ubuntu0.3) ...
 Setting up libsasl2-modules:amd64 (2.1.27+dfsg2-3ubuntu1.2) ...
-Setting up binutils-common:amd64 (2.38-4ubuntu2.5) ...
+Setting up binutils-common:amd64 (2.38-4ubuntu2.6) ...
 Setting up libnghttp2-14:amd64 (1.43.0-1ubuntu0.1) ...
 Setting up libmagic1:amd64 (1:5.41-3ubuntu0.1) ...
 Setting up libdeflate0:amd64 (1.10-2) ...
-Setting up less (590-1ubuntu0.22.04.1) ...
+Setting up less (590-1ubuntu0.22.04.2) ...
 Setting up perl-openssl-defaults:amd64 (5build2) ...
-Setting up linux-libc-dev:amd64 (5.15.0-94.104) ...
-Setting up libctf-nobfd0:amd64 (2.38-4ubuntu2.5) ...
+Setting up linux-libc-dev:amd64 (5.15.0-100.110) ...
+Setting up libctf-nobfd0:amd64 (2.38-4ubuntu2.6) ...
 Setting up gettext-base (0.21-4ubuntu4) ...
 Setting up liblzo2-2:amd64 (2.10-2build3) ...
 Setting up libnpth0:amd64 (1.6-3build2) ...
@@ -1765,11 +1758,11 @@ Setting up lzop (1.04-2build2) ...
 Setting up libmpdec3:amd64 (2.5.1-2build2) ...
 Setting up git-man (1:2.34.1-1ubuntu1.10) ...
 Setting up netbase (6.3) ...
-Setting up libbinutils:amd64 (2.38-4ubuntu2.5) ...
+Setting up libbinutils:amd64 (2.38-4ubuntu2.6) ...
 Setting up libfido2-1:amd64 (1.10.0-1) ...
 Setting up libisl23:amd64 (0.24-2build1) ...
 Setting up libc-dev-bin (2.35-0ubuntu3.6) ...
-Setting up openssl (3.0.2-0ubuntu1.14) ...
+Setting up openssl (3.0.2-0ubuntu1.15) ...
 Setting up libbsd0:amd64 (0.11.5-1) ...
 Setting up readline-common (8.1.2-1) ...
 Setting up publicsuffix (20211207.1025-1) ...
@@ -1784,7 +1777,7 @@ Setting up libitm1:amd64 (12.3.0-1ubuntu1~22.04) ...
 Setting up libgdbm6:amd64 (1.23-1) ...
 Setting up libicu70:amd64 (70.1-2) ...
 Setting up libtsan0:amd64 (11.4.0-1ubuntu1~22.04) ...
-Setting up libctf0:amd64 (2.38-4ubuntu2.5) ...
+Setting up libctf0:amd64 (2.38-4ubuntu2.6) ...
 Setting up libjpeg8:amd64 (8c-2ubuntu10) ...
 Setting up pinentry-curses (1.1.1-1build2) ...
 Setting up cpp-11 (11.4.0-1ubuntu1~22.04) ...
@@ -1808,15 +1801,15 @@ Setting up gpgconf (2.2.27-3ubuntu2.1) ...
 Setting up libcurl4:amd64 (7.81.0-1ubuntu1.15) ...
 Setting up libc6-dev:amd64 (2.35-0ubuntu3.6) ...
 Setting up libx11-6:amd64 (2:1.7.5-1ubuntu0.3) ...
-Setting up libtiff5:amd64 (4.3.0-6ubuntu0.7) ...
+Setting up libtiff5:amd64 (4.3.0-6ubuntu0.8) ...
 Setting up curl (7.81.0-1ubuntu1.15) ...
 Setting up libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...
-Setting up libxml2:amd64 (2.9.13+dfsg-1ubuntu0.3) ...
+Setting up libxml2:amd64 (2.9.13+dfsg-1ubuntu0.4) ...
 Setting up libxmuu1:amd64 (2:1.1.3-3) ...
 Setting up gpg (2.2.27-3ubuntu2.1) ...
 Setting up libpython3-stdlib:amd64 (3.10.6-1~22.04) ...
 Setting up gnupg-utils (2.2.27-3ubuntu2.1) ...
-Setting up binutils-x86-64-linux-gnu (2.38-4ubuntu2.5) ...
+Setting up binutils-x86-64-linux-gnu (2.38-4ubuntu2.6) ...
 Setting up libperl5.34:amd64 (5.34.0-3ubuntu1.3) ...
 Setting up gettext (0.21-4ubuntu4) ...
 Setting up gpg-agent (2.2.27-3ubuntu2.1) ...
@@ -1833,18 +1826,18 @@ Setting up gpgsm (2.2.27-3ubuntu2.1) ...
 Setting up libxext6:amd64 (2:1.3.4-1build1) ...
 Setting up libcurl3-gnutls:amd64 (7.81.0-1ubuntu1.15) ...
 Setting up python3 (3.10.6-1~22.04) ...
-Setting up binutils (2.38-4ubuntu2.5) ...
+Setting up binutils (2.38-4ubuntu2.6) ...
 Setting up python3-xdg (0.27-2) ...
 Setting up man-db (2.10.2-1) ...
 Building database of manual pages ...
-Setting up libgpgme11:amd64 (1.16.0-1.2ubuntu4.1) ...
+Setting up libgpgme11:amd64 (1.16.0-1.2ubuntu4.2) ...
 Setting up python3-six (1.16.0-3ubuntu1) ...
 Setting up dirmngr (2.2.27-3ubuntu2.1) ...
 Setting up perl (5.34.0-3ubuntu1.3) ...
 Setting up libpackage-stash-xs-perl (0.29-1build5) ...
 Setting up libclass-data-inheritable-perl (0.08-3) ...
 Setting up libxs-parse-keyword-perl (0.21-1build1) ...
-Setting up python3-gpg (1.16.0-1.2ubuntu4.1) ...
+Setting up python3-gpg (1.16.0-1.2ubuntu4.2) ...
 Setting up libdata-dump-perl (1.25-1) ...
 Setting up python3-certifi (2020.6.20-1) ...
 Setting up libfile-find-rule-perl (0.34-1) ...
@@ -1863,7 +1856,7 @@ Setting up libpod-parser-perl (1.63-2) ...
 Setting up libb-hooks-op-check-perl (0.22-1build5) ...
 Setting up liblist-moreutils-xs-perl (0.430-2build2) ...
 Setting up libparams-util-perl (1.102-1build3) ...
-Setting up libdpkg-perl (1.21.1ubuntu2.2) ...
+Setting up libdpkg-perl (1.21.1ubuntu2.3) ...
 Setting up libtime-duration-perl (1.21-1) ...
 Setting up python3-urllib3 (1.26.5-1~exp1ubuntu0.1) ...
 Setting up libsub-exporter-progressive-perl (0.001013-1) ...
@@ -1933,7 +1926,7 @@ Setting up libalgorithm-diff-perl (1.201-1) ...
 Setting up libarchive-zip-perl (1.68-1) ...
 Setting up libsub-identify-perl (0.14-1build5) ...
 Setting up libdistro-info-perl (1.1ubuntu0.2) ...
-Setting up libcpanel-json-xs-perl:amd64 (4.27-1build1) ...
+Setting up libcpanel-json-xs-perl:amd64 (4.27-1ubuntu0.1) ...
 Setting up python3-apt (2.4.0ubuntu3) ...
 Setting up libobject-id-perl (0.1.2-2.1ubuntu1) ...
 Setting up liblist-moreutils-perl (0.430-2) ...
@@ -1966,7 +1959,7 @@ Setting up libstring-shellquote-perl (1.04-1) ...
 Setting up libnet-netmask-perl (2.0001-1) ...
 Setting up libsub-install-perl (0.928-1.1) ...
 Setting up gcc (4:11.2.0-1ubuntu1) ...
-Setting up dpkg-dev (1.21.1ubuntu2.2) ...
+Setting up dpkg-dev (1.21.1ubuntu2.3) ...
 Setting up intltool-debian (0.35.0+20060710.5) ...
 Setting up liberror-perl (0.17029-1) ...
 Setting up patchutils (0.4.2-1build2) ...
@@ -2070,7 +2063,7 @@ The following NEW packages will be installed:
   dh-buildinfo dh-strip-nondeterminism dos2unix dwz libdebhelper-perl libdw1
   libefivar-dev libefivar1 libelf-dev libelf1 libfile-stripnondeterminism-perl
   libsigsegv2 libsub-override-perl libtool m4 po-debconf xxd zlib1g-dev
-0 upgraded, 25 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 25 newly installed, 0 to remove and 5 not upgraded.
 Need to get 4216 kB of archives.
 After this operation, 12.8 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libelf1 amd64 0.186-1build1 [51.0 kB]
@@ -2099,7 +2092,7 @@ Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 zlib1g-dev amd6
 Get:24 http://archive.ubuntu.com/ubuntu jammy/main amd64 libelf-dev amd64 0.186-1build1 [64.4 kB]
 Get:25 http://archive.ubuntu.com/ubuntu jammy/universe amd64 dos2unix amd64 7.4.2-2 [384 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 4216 kB in 3s (1326 kB/s)
+[0mFetched 4216 kB in 1s (4727 kB/s)
 Selecting previously unselected package libelf1:amd64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24537 files and directories currently installed.)
 Preparing to unpack .../00-libelf1_0.186-1build1_amd64.deb ...
@@ -2262,9 +2255,9 @@ ii  autotools-dev                        20220109.1                             
 ii  base-files                           12ubuntu4.5                             amd64        Debian base system miscellaneous files
 ii  base-passwd                          3.5.52build1                            amd64        Debian base system master password and group files
 ii  bash                                 5.1-6ubuntu1                            amd64        GNU Bourne Again SHell
-ii  binutils                             2.38-4ubuntu2.5                         amd64        GNU assembler, linker and binary utilities
-ii  binutils-common:amd64                2.38-4ubuntu2.5                         amd64        Common files for the GNU assembler, linker and binary utilities
-ii  binutils-x86-64-linux-gnu            2.38-4ubuntu2.5                         amd64        GNU binary utilities, for x86-64-linux-gnu target
+ii  binutils                             2.38-4ubuntu2.6                         amd64        GNU assembler, linker and binary utilities
+ii  binutils-common:amd64                2.38-4ubuntu2.6                         amd64        Common files for the GNU assembler, linker and binary utilities
+ii  binutils-x86-64-linux-gnu            2.38-4ubuntu2.6                         amd64        GNU binary utilities, for x86-64-linux-gnu target
 ii  bsdextrautils                        2.37.2-4ubuntu3                         amd64        extra utilities from 4.4BSD-Lite
 ii  bsdutils                             1:2.37.2-4ubuntu3                       amd64        basic utilities from 4.4BSD-Lite
 ii  build-essential                      12.9ubuntu3                             amd64        Informational list of build-essential packages
@@ -2290,7 +2283,7 @@ ii  dirmngr                              2.2.27-3ubuntu2.1                      
 ii  distro-info-data                     0.52ubuntu0.6                           all          information about the distributions' releases (data files)
 ii  dos2unix                             7.4.2-2                                 amd64        convert text file line endings between CRLF and LF
 ii  dpkg                                 1.21.1ubuntu2.2                         amd64        Debian package management system
-ii  dpkg-dev                             1.21.1ubuntu2.2                         all          Debian package development tools
+ii  dpkg-dev                             1.21.1ubuntu2.3                         all          Debian package development tools
 ii  dput                                 1.1.0ubuntu2.1                          all          Debian package upload tool
 ii  dwz                                  0.14-1build2                            amd64        DWARF compression tool
 ii  e2fsprogs                            1.46.5-2ubuntu1.1                       amd64        ext2/ext3/ext4 file system utilities
@@ -2326,7 +2319,7 @@ ii  hostname                             3.23ubuntu2                            
 ii  init-system-helpers                  1.62                                    all          helper tools for all init systems
 ii  intltool-debian                      0.35.0+20060710.5                       all          Help i18n of RFC822 compliant config files
 ii  iso-codes                            4.9.0-1                                 all          ISO language, territory, currency, script codes and their translations
-ii  less                                 590-1ubuntu0.22.04.1                    amd64        pager program similar to more
+ii  less                                 590-1ubuntu0.22.04.2                    amd64        pager program similar to more
 ii  libacl1:amd64                        2.3.1-1                                 amd64        access control list - shared library
 ii  libalgorithm-diff-perl               1.201-1                                 all          module to find differences between files
 ii  libalgorithm-diff-xs-perl            0.04-6build3                            amd64        module to find differences between files (XS accelerated)
@@ -2345,7 +2338,7 @@ ii  libaudit1:amd64                      1:3.0.7-1build1                        
 ii  libauthen-sasl-perl                  2.1600-1.1                              all          Authen::SASL - SASL Authentication framework
 ii  libb-hooks-endofscope-perl           0.25-1                                  all          module for executing code after a scope finished compilation
 ii  libb-hooks-op-check-perl             0.22-1build5                            amd64        Perl wrapper for OP check callbacks
-ii  libbinutils:amd64                    2.38-4ubuntu2.5                         amd64        GNU binary utilities (private shared library)
+ii  libbinutils:amd64                    2.38-4ubuntu2.6                         amd64        GNU binary utilities (private shared library)
 ii  libblkid1:amd64                      2.37.2-4ubuntu3                         amd64        block device ID library
 ii  libbrotli1:amd64                     1.0.9-2build6                           amd64        library implementing brotli encoder and decoder (shared libraries)
 ii  libbsd0:amd64                        0.11.5-1                                amd64        utility functions from BSD systems - shared library
@@ -2369,11 +2362,11 @@ ii  libcommon-sense-perl:amd64           3.75-2build1                           
 ii  libconfig-tiny-perl                  2.28-1                                  all          Read/Write .ini style files with as little code as possible
 ii  libconst-fast-perl                   0.014-1.1                               all          facility for creating read-only scalars, arrays, and hashes
 ii  libcontextual-return-perl            0.004014-2                              all          module for creating context-sensitive return values
-ii  libcpanel-json-xs-perl:amd64         4.27-1build1                            amd64        module for fast and correct serialising to JSON
+ii  libcpanel-json-xs-perl:amd64         4.27-1ubuntu0.1                         amd64        module for fast and correct serialising to JSON
 ii  libcrypt-dev:amd64                   1:4.4.27-1                              amd64        libcrypt development files
 ii  libcrypt1:amd64                      1:4.4.27-1                              amd64        libcrypt shared library
-ii  libctf-nobfd0:amd64                  2.38-4ubuntu2.5                         amd64        Compact C Type Format library (runtime, no BFD dependency)
-ii  libctf0:amd64                        2.38-4ubuntu2.5                         amd64        Compact C Type Format library (runtime, BFD dependency)
+ii  libctf-nobfd0:amd64                  2.38-4ubuntu2.6                         amd64        Compact C Type Format library (runtime, no BFD dependency)
+ii  libctf0:amd64                        2.38-4ubuntu2.6                         amd64        Compact C Type Format library (runtime, BFD dependency)
 ii  libcurl3-gnutls:amd64                7.81.0-1ubuntu1.15                      amd64        easy-to-use client-side URL transfer library (GnuTLS flavour)
 ii  libcurl4:amd64                       7.81.0-1ubuntu1.15                      amd64        easy-to-use client-side URL transfer library (OpenSSL flavour)
 ii  libdata-dpath-perl                   0.58-1                                  all          DPath is like XPath but for Perl data structures
@@ -2391,7 +2384,7 @@ ii  libdevel-callchecker-perl            0.008-1ubuntu4                         
 ii  libdevel-size-perl                   0.83-1build4                            amd64        Perl extension for finding the memory usage of Perl variables
 ii  libdevel-stacktrace-perl             2.0400-1                                all          Perl module containing stack trace and related objects
 ii  libdistro-info-perl                  1.1ubuntu0.2                            all          information about distributions' releases (Perl module)
-ii  libdpkg-perl                         1.21.1ubuntu2.2                         all          Dpkg perl modules
+ii  libdpkg-perl                         1.21.1ubuntu2.3                         all          Dpkg perl modules
 ii  libdw1:amd64                         0.186-1build1                           amd64        library that provides access to the DWARF debug information
 ii  libdynaloader-functions-perl         0.003-1.1                               all          deconstructed dynamic C library loading
 ii  libedit2:amd64                       3.1-20210910-1build1                    amd64        BSD editline and history libraries
@@ -2435,7 +2428,7 @@ ii  libgmp10:amd64                       2:6.2.1+dfsg-3ubuntu1                  
 ii  libgnutls30:amd64                    3.7.3-4ubuntu1.4                        amd64        GNU TLS library - main runtime library
 ii  libgomp1:amd64                       12.3.0-1ubuntu1~22.04                   amd64        GCC OpenMP (GOMP) support library
 ii  libgpg-error0:amd64                  1.43-3                                  amd64        GnuPG development runtime library
-ii  libgpgme11:amd64                     1.16.0-1.2ubuntu4.1                     amd64        GPGME - GnuPG Made Easy (library)
+ii  libgpgme11:amd64                     1.16.0-1.2ubuntu4.2                     amd64        GPGME - GnuPG Made Easy (library)
 ii  libgssapi-krb5-2:amd64               1.19.2-2ubuntu0.3                       amd64        MIT Kerberos runtime libraries - krb5 GSS-API Mechanism
 ii  libhash-fieldhash-perl               0.15-1build5                            amd64        Perl module implementing a lightweight field hash
 ii  libhogweed6:amd64                    3.7.3-1build2                           amd64        low level cryptographic library (public-key cryptos)
@@ -2607,7 +2600,7 @@ ii  libtext-glob-perl                    0.11-2                                 
 ii  libtext-levenshteinxs-perl           0.03-4build10                           amd64        XS implementation of the Levenshtein edit distance
 ii  libtext-markdown-discount-perl:amd64 0.13-1build1                            amd64        Perl interface to Discount, an implementation of Markdown
 ii  libtext-xslate-perl:amd64            3.5.9-1build1                           amd64        scalable template engine for Perl 5 (C/XS accelerated)
-ii  libtiff5:amd64                       4.3.0-6ubuntu0.7                        amd64        Tag Image File Format (TIFF) library
+ii  libtiff5:amd64                       4.3.0-6ubuntu0.8                        amd64        Tag Image File Format (TIFF) library
 ii  libtime-duration-perl                1.21-1                                  all          module for rounded or exact English expression of durations
 ii  libtime-moment-perl                  0.44-1build6                            amd64        Perl C/XS module representing date and time of day with UTC offset
 ii  libtimedate-perl                     2.3300-2                                all          collection of modules to manipulate date/time information
@@ -2646,7 +2639,7 @@ ii  libxml-parser-perl:amd64             2.46-3build1                           
 ii  libxml-sax-base-perl                 1.09-1.1                                all          base class for SAX drivers and filters
 ii  libxml-sax-expat-perl                0.51-1                                  all          Perl module for a SAX2 driver for Expat (XML::Parser)
 ii  libxml-sax-perl                      1.02+dfsg-3                             all          Perl module for using and building Perl SAX2 XML processors
-ii  libxml2:amd64                        2.9.13+dfsg-1ubuntu0.3                  amd64        GNOME XML library
+ii  libxml2:amd64                        2.9.13+dfsg-1ubuntu0.4                  amd64        GNOME XML library
 ii  libxmuu1:amd64                       2:1.1.3-3                               amd64        X11 miscellaneous micro-utility library
 ii  libxpm4:amd64                        1:3.5.12-1ubuntu0.22.04.2               amd64        X11 pixmap library
 ii  libxs-parse-keyword-perl             0.21-1build1                            amd64        XS functions to assist in parsing keyword syntax
@@ -2656,7 +2649,7 @@ ii  libyaml-libyaml-perl                 0.83+ds-1build1                        
 ii  libzstd1:amd64                       1.4.8+dfsg-3build1                      amd64        fast lossless compression algorithm
 ii  licensecheck                         3.2.14-2                                all          simple license checker for source files
 ii  lintian                              2.114.0ubuntu1.3                        all          Debian package checker
-ii  linux-libc-dev:amd64                 5.15.0-94.104                           amd64        Linux Kernel Headers for development
+ii  linux-libc-dev:amd64                 5.15.0-100.110                          amd64        Linux Kernel Headers for development
 ii  login                                1:4.8.1-2ubuntu2.1                      amd64        system login tools
 ii  logsave                              1.46.5-2ubuntu1.1                       amd64        save the output of a command in a log file
 ii  lsb-base                             11.1.0ubuntu4                           all          Linux Standard Base init script functionality
@@ -2676,7 +2669,7 @@ ii  ncurses-base                         6.3-2ubuntu0.1                         
 ii  ncurses-bin                          6.3-2ubuntu0.1                          amd64        terminal-related programs and man pages
 ii  netbase                              6.3                                     all          Basic TCP/IP networking system
 ii  openssh-client                       1:8.9p1-3ubuntu0.6                      amd64        secure shell (SSH) client, for secure access to remote machines
-ii  openssl                              3.0.2-0ubuntu1.14                       amd64        Secure Sockets Layer toolkit - cryptographic utility
+ii  openssl                              3.0.2-0ubuntu1.15                       amd64        Secure Sockets Layer toolkit - cryptographic utility
 ii  passwd                               1:4.8.1-2ubuntu2.1                      amd64        change and administer password and group data
 ii  patch                                2.7.6-7build2                           amd64        Apply a diff file to an original
 ii  patchutils                           0.4.2-1build2                           amd64        Utilities to work with patches
@@ -2694,7 +2687,7 @@ ii  python3-apt                          2.4.0ubuntu3                           
 ii  python3-certifi                      2020.6.20-1                             all          root certificates for validating SSL certs and verifying TLS hosts (python3)
 ii  python3-chardet                      4.0.0-1                                 all          universal character encoding detector for Python3
 ii  python3-debian                       0.1.43ubuntu1.1                         all          Python 3 modules to work with Debian-related data formats
-ii  python3-gpg                          1.16.0-1.2ubuntu4.1                     amd64        Python interface to the GPGME GnuPG encryption library (Python 3)
+ii  python3-gpg                          1.16.0-1.2ubuntu4.2                     amd64        Python interface to the GPGME GnuPG encryption library (Python 3)
 ii  python3-idna                         3.3-1                                   all          Python IDNA2008 (RFC 5891) handling (Python 3)
 ii  python3-magic                        2:0.4.24-2                              all          python3 interface to the libmagic file type identification library
 ii  python3-minimal                      3.10.6-1~22.04                          amd64        minimal subset of the Python language (default python3 version)
@@ -2726,68 +2719,68 @@ ii  xz-utils                             5.2.5-2ubuntu1                         
 ii  zlib1g:amd64                         1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - runtime
 ii  zlib1g-dev:amd64                     1:1.2.11.dfsg-2ubuntu9.2                amd64        compression library - development
 ii  zstd                                 1.4.8+dfsg-3build1                      amd64        fast lossless compression algorithm -- CLI tool
-Removing intermediate container 22a606044238
- ---> dfcf477a8f01
+Removing intermediate container 3b665591a6c5
+ ---> bda075fdf07e
 Step 4/11 : RUN git clone --branch main https://github.com/UniconSoftware/shim
- ---> Running in 67f0271f1841
+ ---> Running in 3a6b85c63854
 [91mCloning into 'shim'...
-[0mRemoving intermediate container 67f0271f1841
- ---> 696638fcc0e5
+[0mRemoving intermediate container 3a6b85c63854
+ ---> 763d608afaf2
 Step 5/11 : WORKDIR /shim
- ---> Running in edf8b95875f2
-Removing intermediate container edf8b95875f2
- ---> dc84b46c2646
+ ---> Running in 470fee572a25
+Removing intermediate container 470fee572a25
+ ---> dfbd0d9e7245
 Step 6/11 : RUN git show --no-patch
- ---> Running in 58fda17c05c6
-commit 9a6daa0f2058e77ded15b39267b63a17d6a1af9b
+ ---> Running in 34e0b5976e96
+commit 87515580809b2c27df1d4394b8cfda22584f717d
 Author: Christoph Biedl <christoph.biedl@unicon.com>
-Date:   Wed Feb 21 10:22:25 2024 +0100
+Date:   Thu Mar 7 17:14:07 2024 +0100
 
-    Add entry to SBAT definition
-Removing intermediate container 58fda17c05c6
- ---> a612bef07521
+    Replace Unicon certificate with DER variant
+Removing intermediate container 34e0b5976e96
+ ---> 9dbf84ecf3cf
 Step 7/11 : RUN git branch --move main master
- ---> Running in c52a48d55394
-Removing intermediate container c52a48d55394
- ---> 6ea1316b77e7
+ ---> Running in ac9f61282f64
+Removing intermediate container ac9f61282f64
+ ---> 5b9cef812dbe
 Step 8/11 : RUN make update
- ---> Running in 4bbdb3b9569e
+ ---> Running in d4e969e10f4a
 git submodule update --init --recursive
 [91mSubmodule 'gnu-efi' (https://github.com/rhboot/gnu-efi.git) registered for path 'gnu-efi'
 [0m[91mCloning into '/shim/gnu-efi'...
 [0mSubmodule path 'gnu-efi': checked out '328951d3dcb5ff97f5a7c7a362b006626fada000'
-Removing intermediate container 4bbdb3b9569e
- ---> 803438bc7cb1
-Step 9/11 : RUN make VENDOR_CERT_FILE=uc-sb-signing.crt.pem
- ---> Running in 6fe3dbd8a11f
+Removing intermediate container d4e969e10f4a
+ ---> 72c65b0a8fb9
+Step 9/11 : RUN make VENDOR_CERT_FILE=uc-sb-signing.crt.der
+ ---> Running in ffe66d300c25
 sed	-e "s,@@VERSION@@,15.8," \
 	-e "s,@@UNAME@@,Linux x86_64 x86_64 x86_64 GNU/Linux," \
-	-e "s,@@COMMIT@@,9a6daa0f2058e77ded15b39267b63a17d6a1af9b," \
+	-e "s,@@COMMIT@@,87515580809b2c27df1d4394b8cfda22584f717d," \
 	< /shim/version.c.in > version.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o shim.o shim.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o globals.o globals.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o mok.o mok.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o netboot.o netboot.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\" -c -o cert.o cert.S 
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o shim.o shim.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o globals.o globals.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o mok.o mok.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o netboot.o netboot.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\" -c -o cert.o cert.S 
 [91mcert.S: Assembler messages:
 cert.S:55: Warning: setting incorrect section attributes for .note.GNU-stack
-[0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o replacements.o replacements.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o tpm.o tpm.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o version.o version.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o errlog.o errlog.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o sbat.o sbat.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\" -x c -c -o sbat_data.o /dev/null
+[0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o replacements.o replacements.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o tpm.o tpm.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o version.o version.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o errlog.o errlog.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o sbat.o sbat.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\" -x c -c -o sbat_data.o /dev/null
 objcopy --add-section .sbat=/shim/data/sbat.csv \
 	--set-section-flags .sbat=contents,alloc,load,readonly,data \
 	sbat_data.o
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\" -c -o sbat_var.o sbat_var.S 
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\" -c -o sbat_var.o sbat_var.S 
 [91msbat_var.S: Assembler messages:
 sbat_var.S:23: Warning: setting incorrect section attributes for .note.GNU-stack
-[0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o pe.o pe.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o pe-relocate.o pe-relocate.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o httpboot.o httpboot.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o csv.o csv.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o load-options.o load-options.c
+[0mgcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o pe.o pe.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o pe-relocate.o pe-relocate.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o httpboot.o httpboot.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o csv.o csv.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o load-options.o load-options.c
 for i in Hash Hmac Cipher Rand Pk Pem SysCall; do mkdir -p Cryptlib/$i; done
 make TOPDIR=/shim VPATH=/shim/Cryptlib -C Cryptlib -f /shim/Cryptlib/Makefile 
 make[1]: Entering directory '/shim/Cryptlib'
@@ -3360,9 +3353,9 @@ objcopy -D -j .text -j .sdata -j .data \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
 	shimx64.so shimx64.efi.debug
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o MokManager.o MokManager.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o PasswordCrypt.o PasswordCrypt.c
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o crypt_blowfish.o crypt_blowfish.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o MokManager.o MokManager.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o PasswordCrypt.o PasswordCrypt.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o crypt_blowfish.o crypt_blowfish.c
 ld -o mmx64.so --hash-style=sysv -nostdlib -znocombreloc -T /shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -Lgnu-efi/x86_64/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined MokManager.o PasswordCrypt.o crypt_blowfish.o errlog.o sbat_data.o globals.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
@@ -3372,7 +3365,7 @@ objcopy -D -j .text -j .sdata -j .data \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
 	mmx64.so mmx64.efi.debug
-gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.pem\"   -c -o fallback.o fallback.c
+gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/shim/= -fno-stack-protector -fno-strict-aliasing -fpic -fshort-wchar -Os -Wall -Wextra -Wno-missing-field-initializers  -mno-mmx -mno-sse -mno-red-zone -nostdinc -maccumulate-outgoing-args  -m64 -DMDE_CPU_X64 -DPAGE_SIZE=4096 -Werror -nostdinc -I/shim/Cryptlib -I/shim/Cryptlib/Include -I/shim/gnu-efi/inc -I/shim/gnu-efi/inc/x86_64 -I/shim/gnu-efi/inc/protocol -I/shim/include -iquote /shim -iquote /shim -isystem /shim/include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/11/include -DDEFAULT_LOADER='L"\\\\grubx64.efi"' -DDEFAULT_LOADER_CHAR='"\\\\grubx64.efi"' -DEFI_ARCH='L"x64"' -DDEBUGDIR='L"/usr/lib/debug/usr/share/shim/x64-15.8/"' -DVENDOR_CERT_FILE=\"uc-sb-signing.crt.der\"   -c -o fallback.o fallback.c
 ld -o fbx64.so --hash-style=sysv -nostdlib -znocombreloc -T /shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -Lgnu-efi/x86_64/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined fallback.o tpm.o errlog.o sbat_data.o globals.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/11/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
@@ -3394,15 +3387,15 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
 ./post-process-pe -vv  fbx64.efi
-Removing intermediate container 6fe3dbd8a11f
- ---> 5dd84cebc6af
+Removing intermediate container ffe66d300c25
+ ---> fab6ff1ef44c
 Step 10/11 : WORKDIR /
- ---> Running in 31a5fb2bc64f
-Removing intermediate container 31a5fb2bc64f
- ---> 7057fa2b1191
+ ---> Running in 7f827b517a2e
+Removing intermediate container 7f827b517a2e
+ ---> b65682477fbc
 Step 11/11 : RUN hexdump -Cv /shim-review/shimx64.efi > orig &&     hexdump -Cv /shim/shimx64.efi > build &&     diff -u orig build
- ---> Running in 000de3296527
-Removing intermediate container 000de3296527
- ---> 4235c8dadfa8
-Successfully built 4235c8dadfa8
-Wed Feb 21 10:53:56 AM CET 2024: End work
+ ---> Running in 8e8178d980e2
+Removing intermediate container 8e8178d980e2
+ ---> 332db5351751
+Successfully built 332db5351751
+Fri Mar  8 05:53:59 PM CET 2024: End work
