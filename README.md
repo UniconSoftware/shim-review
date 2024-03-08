@@ -233,7 +233,7 @@ Not applicable as this is the first shim to be signed.
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-99336896cd17257e9a4dc22b6c8a1d5db59f5e52f3a76af62b6dde40187e3939  shimx64.efi
+78a979f518efdcc0c43f7cc8b49c369bf601182dd37f9d3ade9f139befe3b1ef  shimx64.efi
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -306,8 +306,8 @@ Not applicable
 *******************************************************************************
 The used bootloader is grub2, sources are taken from, as mentioned above:
 
-* "current" Debian 11 ("bullseye"), version 2.06-3~deb11u5.
-* "future" Ubuntu 22.04 ("jammy"), version 2.06-2ubuntu14.4.
+* "current" Debian 11 ("bullseye"), version 2.06-3~deb11u6
+* "future" Ubuntu 22.04 ("jammy"), version 2.06-2ubuntu14.4
 
 *******************************************************************************
 ### If your SHIM launches any other components, please provide further details on what is launched.
@@ -349,4 +349,4 @@ from the Debian kernel to enforce signature validation of kernel modules if and 
 ### Add any additional information you think we may need to validate this shim.
 *******************************************************************************
 Certificate is
-42892b947de589fa0fa0717c67ad60826404851d7b46d407be9cfc4270c41c35  uc-sb-signing.crt.pem
+6b0977b60f9691a0e7e78c4f13e962a93ac595759fb264c69f5ead07cab68b58  uc-sb-signing.crt.der
