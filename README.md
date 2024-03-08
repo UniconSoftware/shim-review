@@ -331,7 +331,9 @@ The Sources of all out-of-tree modules are taken from a trusted source (usually 
 *******************************************************************************
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB2)?
 *******************************************************************************
-Yes, we load grub2.
+Short answer: No.
+
+Technically yes as we use grub2, but grub2 itself will refuse to load unsigned kernels if bootet in secure boot mode. And we certainly do not alter that behaviour.
 
 *******************************************************************************
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
